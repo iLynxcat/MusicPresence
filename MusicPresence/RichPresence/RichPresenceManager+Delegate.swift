@@ -8,9 +8,10 @@ extension RichPresenceManager: SwordRPCDelegate {
     }
 
     func rpcDidDisconnect(_ rpc: SwordRPC, code: Int?, message: String?) {
+        guard let code, let message else { return }
         self.isConnected = false
         logger.info(
-            "Disconnected from Discord (\(code ?? 0) \(message ?? "<none>"))"
+            "Disconnected from Discord (\(code) \(message))"
         )
     }
 
