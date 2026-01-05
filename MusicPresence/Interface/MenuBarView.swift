@@ -27,7 +27,7 @@ struct MenuBarView: Scene {
             systemImage: "music.note",
             isInserted: $isInserted
         ) {
-            Button("Open Music app") {
+            Button("Open Music") {
                 activateMusicApp()
             }
 
