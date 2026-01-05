@@ -1,0 +1,4 @@
+// Copy this file as "build.xcconfig" and fill in the details
+
+DEVELOPMENT_TEAM = // your Apple Developer team id
+PRODUCT_BUNDLE_IDENTIFIER = // app bundle identifier (i.e. com.example.MusicPresence)
