@@ -1,4 +1,7 @@
-// Copy this file as "build.xcconfig" and fill in the details
+// Copy this file as "build.xcconfig" and fill in the details.
+// DO NOT DUPLICATE THE FILE IN XCODE DIRECTLY. Instead:
+//    Terminal: Use "cp example.xcconfig build.xcconfig"
+//    Finder:   Duplicate example.xcconfig, rename duplicated file to "build.xcconfig"
 
 DEVELOPMENT_TEAM = // your Apple Developer team id
 PRODUCT_BUNDLE_IDENTIFIER = // app bundle identifier (i.e. com.example.MusicPresence)
