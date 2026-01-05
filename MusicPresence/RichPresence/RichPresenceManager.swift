@@ -21,7 +21,6 @@ class RichPresenceManager {
         rpc.connect()
     }
 
-
     func updatePresence(_ state: MusicState?) {
         if !isConnected {
             logger.warning(
@@ -34,29 +33,27 @@ class RichPresenceManager {
             rpc.clearPresence()
             return
         }
-
-        logger.debug("Updating presence...")
-        logger.debug("\(["state":state])")
-
+        
         var presence = RichPresence()
+
         presence.statusDisplayType = .state
         presence.type = .listening
 
         presence.state = state.artistName
         presence.details = state.trackName
 
+        let elapsedSeconds = state.elapsedSeconds
         presence.timestamps.start =
-            .now - state.elapsedSeconds
+            .now - elapsedSeconds
         presence.timestamps.end =
-            .now + (state.durationSeconds - state.elapsedSeconds)
+            .now + (state.durationSeconds - elapsedSeconds)
 
         presence.assets.largeText = state.albumName
-        //        presence.assets.largeImage = "apple_music"  // album art (url?)
+        //        presence.assets.largeImage = "apple-music"  // album art (url?)
 
-        //        presence.assets.smallImage = "apple_music"
-        //        presence.assets.smallText = "Apple Music"
+        presence.assets.smallImage = "apple-music"
+        presence.assets.smallText = "Apple Music"
 
         rpc.setPresence(presence)
-        logger.info("Presence updated")
     }
 }

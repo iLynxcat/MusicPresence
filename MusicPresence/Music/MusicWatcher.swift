@@ -2,16 +2,12 @@ import Foundation
 
 @Observable
 class MusicWatcher {
-    private let rpc: RichPresenceManager
-
     public private(set) var playState: MusicState?
 
     private var notificationListener: NSObjectProtocol?
     private var launchListener: NSObjectProtocol?
 
-    init(rpc: RichPresenceManager) {
-        self.rpc = rpc
-
+    init() {
         launchListener = NotificationCenter.default.addObserver(
             forName: .appDidLaunch,
             object: nil,
@@ -42,23 +38,36 @@ class MusicWatcher {
         print("Polling for launch!")
 
         playState = self.poll()
-        rpc.updatePresence(playState)
     }
 
     func handleNotification(notification: Notification) {
         guard let userInfo = notification.userInfo else { return }
+
+        print(userInfo)
+
         guard userInfo["Player State"] as? String == "Playing" else {
             self.playState = nil
-            rpc.updatePresence(nil)
             return
+        }
+
+        if let track = userInfo["Name"] as? String,
+            let album = userInfo["Album"] as? String,
+            let artist = userInfo["Artist"] as? String,
+            let duration = userInfo["Total Time"] as? String
+        {
+            self.playState = MusicState(
+                trackName: track,
+                artistName: artist,
+                albumName: album,
+                elapsedSeconds: 0,
+                durationSeconds: try! TimeInterval(duration, format: .number)
+            )
         }
 
         guard let polledData = poll() else {
             return
         }
-
         self.playState = polledData
-        rpc.updatePresence(playState)
     }
 }
 

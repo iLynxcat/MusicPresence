@@ -1,6 +1,6 @@
 import Foundation
 
-struct MusicState {
+struct MusicState: Equatable {
     let trackName: String
     let artistName: String
     let albumName: String
