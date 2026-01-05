@@ -42,9 +42,9 @@ struct MenuBarView: Scene {
                         systemImage: "music.note.square.stack"
                     ) {}
                 } else {
-                    Button("–", systemImage: "music.note") {}
-                    Button("–", systemImage: "music.microphone") {}
-                    Button("–", systemImage: "music.note.square.stack") {}
+                    Button("Not playing", systemImage: "music.note") {}
+                    Button("", systemImage: "music.microphone") {}
+                    Button("", systemImage: "music.note.square.stack") {}
                 }
             }
             .disabled(true)
