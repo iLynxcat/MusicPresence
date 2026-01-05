@@ -293,7 +293,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Presence;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
-				INFOPLIST_KEY_NSAppleEventsUsageDescription = "MusicPresence needs to poll the Music app for player status to display it.";
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "Music Presence needs to access Music to retrieve the currently playing track.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -343,7 +343,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Presence;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
-				INFOPLIST_KEY_NSAppleEventsUsageDescription = "MusicPresence needs to poll the Music app for player status to display it.";
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "Music Presence needs to access Music to retrieve the currently playing track.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
