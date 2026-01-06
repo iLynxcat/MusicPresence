@@ -11,8 +11,6 @@ struct MenuBarView: Scene {
 
     @AppStorage(MENU_BAR_INSERTED_KEY) private var isInserted = true
 
-    @Environment(\.scenePhase) var scenePhase
-
     private let rpc: RichPresenceManager
     private let music: MusicWatcher
 
@@ -65,12 +63,6 @@ struct MenuBarView: Scene {
                 .keyboardShortcut(
                     KeyboardShortcut(.init("q"), modifiers: .command)
                 )
-            }
-        }
-        .onChange(of: scenePhase) { oldPhase, newPhase in
-            // re-show menu bar icon when user relaunches app while open
-            if newPhase == .active {
-                isInserted = true
             }
         }
     }

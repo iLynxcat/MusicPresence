@@ -6,6 +6,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows: Bool) -> Bool {
+        // restore menu bar icon on relaunch
         UserDefaults.standard.set(true, forKey: MENU_BAR_INSERTED_KEY)
         return true
     }
