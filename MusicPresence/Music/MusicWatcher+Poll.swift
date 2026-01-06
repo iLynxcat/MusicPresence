@@ -1,5 +1,6 @@
 import AppKit
 import Foundation
+import OSLog
 
 private let pollScriptSource = """
     if application "Music" is running then
@@ -38,25 +39,32 @@ extension MusicWatcher {
         let result = pollScript.executeAndReturnError(&error)
 
         if let error {
-            print("AppleScript error: \(error)")
+            let errorPrefix = "AppleScript error:"
 
             if let errorNumber = error["NSAppleScriptErrorNumber"] as? Int {
-                print("Error number: \(errorNumber)")
-
                 if errorNumber == -1743 || errorNumber == -1744 {
-                    print("No automation permission for Music!")
+                    logger.error(
+                        "\(errorPrefix) \(error) (code \(errorNumber), no permission to automate Music)"
+                    )
+                } else {
+                    logger.error(
+                        "\(errorPrefix) \(error) (code \(errorNumber))"
+                    )
                 }
+                return nil
             }
+
+            logger.error("\(errorPrefix) \(error)")
             return nil
         }
 
         guard result.descriptorType != 0 else {
-            print("Got empty result from AppleScript")
+            logger.warning("Got empty result from AppleScript")
             return nil
         }
 
         guard result.numberOfItems >= 6 else {
-            print("Result has insufficient items: \(result.numberOfItems)")
+            logger.warning("Result has insufficient item count: \(result.numberOfItems)")
             return nil
         }
 
@@ -70,7 +78,7 @@ extension MusicWatcher {
         let trackName = result.atIndex(2)?.stringValue ?? "Unknown track"
         let artistName = result.atIndex(3)?.stringValue ?? "Unknown artist"
         let albumName = result.atIndex(4)?.stringValue ?? "Unknown album"
-        
+
         let durationSeconds = result.atIndex(5)?.doubleValue ?? -1
         let elapsedSeconds = result.atIndex(6)?.doubleValue ?? 0
 

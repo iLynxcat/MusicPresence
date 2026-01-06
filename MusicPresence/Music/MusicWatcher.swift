@@ -1,7 +1,10 @@
 import Foundation
+import OSLog
 
 @Observable
 class MusicWatcher {
+    let logger = createLogger("Music Watcher")
+
     public private(set) var playState: MusicState?
 
     private var notificationListener: NSObjectProtocol?
@@ -35,15 +38,12 @@ class MusicWatcher {
     }
 
     func poll(_: Notification) {
-        print("Polling for launch!")
-
+        logger.info("Polling for status due to launch")
         playState = self.poll()
     }
 
     func handleNotification(notification: Notification) {
         guard let userInfo = notification.userInfo else { return }
-
-        print(userInfo)
 
         guard userInfo["Player State"] as? String == "Playing" else {
             self.playState = nil
@@ -64,6 +64,7 @@ class MusicWatcher {
             )
         }
 
+        // the notification doesn't include current elapsed duration, we have to poll for it
         guard let polledData = poll() else {
             return
         }
