@@ -22,9 +22,22 @@
 		B7D0864C2EEA9E8D00AC2DED /* Music Presence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Music Presence.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		B70D0C982F0DA5D500DA636E /* Exceptions for "MusicPresence" folder in "Music Presence" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Resources/Info.plist,
+			);
+			target = B7D0864B2EEA9E8D00AC2DED /* Music Presence */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		B7D0864E2EEA9E8D00AC2DED /* MusicPresence */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B70D0C982F0DA5D500DA636E /* Exceptions for "MusicPresence" folder in "Music Presence" target */,
+			);
 			path = MusicPresence;
 			sourceTree = "<group>";
 		};
@@ -298,6 +311,7 @@
 				ENABLE_RESOURCE_ACCESS_PHOTO_LIBRARY = NO;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MusicPresence/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Presence;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
@@ -348,6 +362,7 @@
 				ENABLE_RESOURCE_ACCESS_PHOTO_LIBRARY = NO;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MusicPresence/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Presence;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
