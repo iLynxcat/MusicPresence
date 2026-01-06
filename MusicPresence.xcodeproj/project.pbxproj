@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B70D0C732F0D939700DA636E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B70D0C722F0D939700DA636E /* README.md */; };
 		B7450F282F0C5A1000BABC4F /* build.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B7450F272F0C5A0E00BABC4F /* build.xcconfig */; };
 		B7450F2B2F0C5CC100BABC4F /* example.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B7450F2A2F0C5CC100BABC4F /* example.xcconfig */; };
 		B7656E502EEC41110031C83B /* SwordRPC in Frameworks */ = {isa = PBXBuildFile; productRef = B7656E4F2EEC41110031C83B /* SwordRPC */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B70D0C722F0D939700DA636E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B7450F272F0C5A0E00BABC4F /* build.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = build.xcconfig; sourceTree = "<group>"; };
 		B7450F2A2F0C5CC100BABC4F /* example.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = example.xcconfig; sourceTree = "<group>"; };
 		B7D0864C2EEA9E8D00AC2DED /* Music Presence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Music Presence.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,6 +43,7 @@
 		B7D086432EEA9E8D00AC2DED = {
 			isa = PBXGroup;
 			children = (
+				B70D0C722F0D939700DA636E /* README.md */,
 				B7450F2A2F0C5CC100BABC4F /* example.xcconfig */,
 				B7450F272F0C5A0E00BABC4F /* build.xcconfig */,
 				B7D0864E2EEA9E8D00AC2DED /* MusicPresence */,
@@ -125,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7450F282F0C5A1000BABC4F /* build.xcconfig in Resources */,
+				B70D0C732F0D939700DA636E /* README.md in Resources */,
 				B7450F2B2F0C5CC100BABC4F /* example.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
