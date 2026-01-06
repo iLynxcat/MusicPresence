@@ -33,7 +33,7 @@ class RichPresenceManager {
             rpc.clearPresence()
             return
         }
-        
+
         var presence = RichPresence()
 
         presence.statusDisplayType = .state
@@ -42,11 +42,10 @@ class RichPresenceManager {
         presence.state = state.artistName
         presence.details = state.trackName
 
-        let elapsedSeconds = state.elapsedSeconds
         presence.timestamps.start =
-            .now - elapsedSeconds
+            state.updatedAt - state.elapsedSeconds
         presence.timestamps.end =
-            .now + (state.durationSeconds - elapsedSeconds)
+            state.updatedAt + (state.durationSeconds - state.elapsedSeconds)
 
         presence.assets.largeText = state.albumName
         //        presence.assets.largeImage = "apple-music"  // album art (url?)

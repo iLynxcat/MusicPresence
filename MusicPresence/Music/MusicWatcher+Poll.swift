@@ -32,6 +32,8 @@ let pollScript: NSAppleScript =
 
 extension MusicWatcher {
     func poll() -> MusicState? {
+        let now: Date = .now
+
         var error: NSDictionary?
         let result = pollScript.executeAndReturnError(&error)
 
@@ -77,7 +79,8 @@ extension MusicWatcher {
             artistName: artistName,
             albumName: albumName,
             elapsedSeconds: elapsedSeconds,
-            durationSeconds: durationSeconds
+            durationSeconds: durationSeconds,
+            updatedAt: now
         )
     }
 }
