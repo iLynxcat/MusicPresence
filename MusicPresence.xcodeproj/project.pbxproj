@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B70D0C732F0D939700DA636E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B70D0C722F0D939700DA636E /* README.md */; };
 		B70D0C962F0DA58F00DA636E /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = B70D0C952F0DA58F00DA636E /* LICENSE.txt */; };
-		B7450F282F0C5A1000BABC4F /* build.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B7450F272F0C5A0E00BABC4F /* build.xcconfig */; };
-		B7450F2B2F0C5CC100BABC4F /* example.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B7450F2A2F0C5CC100BABC4F /* example.xcconfig */; };
 		B7656E502EEC41110031C83B /* SwordRPC in Frameworks */ = {isa = PBXBuildFile; productRef = B7656E4F2EEC41110031C83B /* SwordRPC */; };
 /* End PBXBuildFile section */
 
@@ -144,9 +141,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B70D0C962F0DA58F00DA636E /* LICENSE.txt in Resources */,
-				B7450F282F0C5A1000BABC4F /* build.xcconfig in Resources */,
-				B70D0C732F0D939700DA636E /* README.md in Resources */,
-				B7450F2B2F0C5CC100BABC4F /* example.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
